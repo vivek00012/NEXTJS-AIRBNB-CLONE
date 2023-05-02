@@ -15,12 +15,9 @@ const ReservationsPage = async () => {
       </ClientOnly>
     );
   }
-  console.log(currentUser.id);
   const reservations = await getReservations({
     authorId: currentUser.id,
   });
-
-  console.log("reservations", reservations, reservations.length === 0);
 
   if (reservations && reservations.length === 0) {
     return (

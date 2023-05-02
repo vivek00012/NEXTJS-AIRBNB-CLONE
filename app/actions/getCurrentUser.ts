@@ -11,7 +11,6 @@ export default async function getCurrentUser(){
     try{
       const session = await getSession();
       setTimeout(()=>{
-        console.log("session is",session)
       },1200)
       if(!session?.user?.email){
         return null;

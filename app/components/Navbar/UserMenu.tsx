@@ -22,11 +22,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const router = useRouter();
 
   const toggleOpen = useCallback(() => {
-    console.log(isOpen);
-
     setIsOpen((value) => !value);
-    console.log(isOpen);
-  }, []);
+  }, [isOpen]);
 
   const onRent = useCallback(() => {
     if (!currentUser) {
