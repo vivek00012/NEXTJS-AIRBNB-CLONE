@@ -4,7 +4,6 @@ import EmptyState from "./components/EmptyState";
 import getListings from "./actions/getListings";
 import ListingCard from "./components/Listings/ListingCard";
 import getCurrentUser from "./actions/getCurrentUser";
-import { Listing } from "@prisma/client";
 import { IListingParams } from "./actions/getListings";
 
 interface HomeProps {
@@ -40,5 +39,5 @@ const Home = async ({ searchParams }: HomeProps) => {
     </ClientOnly>
   );
 };
-
+export const dynamic = "force-static";
 export default Home;

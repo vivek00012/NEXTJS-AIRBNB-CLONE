@@ -2,12 +2,15 @@ import EmptyState from "../components/EmptyState";
 import ClientOnly from "../components/ClientOnly";
 
 import getCurrentUser from "../actions/getCurrentUser";
-import getReservations from "../actions/getReservations";
 import PropertiesClient from "./PropertiesClient";
 import getListing from "../actions/getListings";
 
 const PropertiesPage = async () => {
   const currentUser = await getCurrentUser();
+
+  const listings = await getListing({
+    userId: currentUser?.id,
+  });
 
   if (!currentUser) {
     return (
@@ -16,10 +19,6 @@ const PropertiesPage = async () => {
       </ClientOnly>
     );
   }
-
-  const listings = await getListing({
-    userId: currentUser.id,
-  });
 
   if (listings.length === 0) {
     return (
