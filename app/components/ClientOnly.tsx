@@ -16,7 +16,7 @@ const ClientOnly: React.FC<ClientOnlyProps> = ({ children }) => {
     return null;
   }
 
-  return <>{children}</>;
+  return <SessionProvider>{children}</SessionProvider>;
 };
 
 export default ClientOnly;

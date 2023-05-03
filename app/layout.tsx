@@ -8,6 +8,7 @@ import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUser";
 import RentModal from "./components/Modals/RentModal";
 import SearchModal from "./components/Modals/SearchModal";
+import { SessionProvider } from "next-auth/react";
 
 const font = Nunito({ subsets: ["latin"] });
 
