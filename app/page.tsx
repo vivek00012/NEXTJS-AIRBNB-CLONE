@@ -40,5 +40,4 @@ const Home = async ({ searchParams }: HomeProps) => {
   );
 };
 export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
 export default Home;
