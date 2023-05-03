@@ -9,7 +9,7 @@ import { IListingParams } from "./actions/getListings";
 interface HomeProps {
   searchParams: IListingParams;
 }
-
+export const dynamicParams = true;
 const Home = async ({ searchParams }: HomeProps) => {
   const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
@@ -40,4 +40,5 @@ const Home = async ({ searchParams }: HomeProps) => {
   );
 };
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 export default Home;
