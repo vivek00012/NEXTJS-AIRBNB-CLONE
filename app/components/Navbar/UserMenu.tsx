@@ -56,7 +56,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       {isOpen && (
         <div className="absolute shadow-md top-12 right-0  w-[40vw]  md:w-3/4 bg-white overflow-hidden  text-sm">
           <div className="flex flex-col cursor-pointer">
-            {session?.user ? (
+            {currentUser ? (
               <>
                 <MenuItem
                   onMenuClick={() => router.push("/trips")}
