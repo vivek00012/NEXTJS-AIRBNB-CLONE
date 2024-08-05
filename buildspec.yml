@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+      - npm run export
+  post_build:
+    commands:
+      - zip -r nextjs-app.zip ./*
+      - aws s3 cp nextjs-app.zip s3://codepipeline-vivek/nextjs-app.zip
+artifacts:
+  files:
+    - nextjs-app.zip
